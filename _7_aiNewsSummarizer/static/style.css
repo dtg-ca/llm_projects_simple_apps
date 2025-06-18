@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+select, button { padding: 10px; margin: 5px; width: 40%; }
+#summary {  width: 80%; margin: auto; border: 1px solid #ccc;  padding: 10px; background: #f4f4f4; text-align: left;}
+#articles { width: 80%; margin: auto; text-align: left;}

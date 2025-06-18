@@ -1,0 +1,4 @@
+body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+select, button { padding: 10px; margin: 5px; width: 80%; }
+textarea { width: 40%; padding: 10px; margin: 5px; }
+pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; width: 80%; margin: 10px auto; text-align: left; }

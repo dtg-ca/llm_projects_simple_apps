@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Generator & Debugger</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <h1>AI Code Assistant & Debugger</h1>
+    <textarea id="code-input" placeholder="Enter a description for code output (e.g., 'Create a Python function to calculate factorial') or paste code for debugging"></textarea><br>
+    <select id="mode">
+        <option value="code">Generate Code</option>
+        <option value="debug">Debug Code</option>       
+    </select>
+    <button onclick="generateCode()">Submit</button>
+    
+    <h2>Output:</h2>
+    <pre id="output">Your generated or debugged code will appear here......</pre>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Summarizer</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+    <h1>AI News Summarizer</h1>
+    <label for="category">Choose a news category:</label>
+    <select id="category">
+        <option value="technology">Technology</option>
+        <option value="business">Business</option>
+        <option value="sports">Sports</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="science">Science</option>
+        <option value="health">Health</option>
+    </select>
+    <button onclick="fetchNews()">Fetch News</button>
+    
+    <h2>Summarized News:</h2>
+    <div id="summary">Your AI-generated news summary will appear here...</div>
+
+    <h2>Original Headlines:</h2>
+    <div id="articles"></div>
+
+    <script src="static/script.js"></script>
+
+</body>
+</html>
