@@ -1,4 +1,4 @@
-# AI Legal Document Analyzer using FastAPI and LM Studio serving the backend LLM model 
+# AI News Summarizer using FastAPI and LM Studio serving the backend LLM model 
 # This application provides an API endpoint to summarize news articles using a language model. 
 #  It fetches news articles from an external API based on user-defined parameters. #   
 # It serves a static HTML page for user interaction and handles user requests.
@@ -10,7 +10,7 @@ from fastapi.responses import FileResponse
 import requests
 import os
 import json
-
+ 
 app = FastAPI()
 
 # Serve static files (HTML, CSS, JS)
@@ -18,7 +18,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # API Configuration
 OLLAMA_URL = "http://127.0.0.1:1234/v1/completions"  # Updated URL for Ollama API
-MODEL_NAME = "qwen3-4b"  # Using Qwen model for news summarization
+MODEL_NAME = "meta-llama-3.1-8b-instruct"  # Using Qwen model for news summarization
 NEWS_API_URL = "https://newsapi.org/v2/top-headlines"  # Example news API URL
 NEWS_API_KEY = "47e5d2fcb4284d08be705596282618cd"  # Replace with your actual News API key
 
@@ -49,7 +49,7 @@ def fetch_and_summarize_news(category: str = Query("technology")):
         # Send news text to Ollama for summarization
         response = requests.post(
             OLLAMA_URL,
-            json={"model": MODEL_NAME, "prompt": f"Summarize these news headlines:\n{news_text}", "stream": False},
+            json={"model": MODEL_NAME, "prompt": f"Summarize these news headlines in a very consise manner. Do not repeat the same lines or information again and again:\n{news_text}", "stream": False},
         )
 
         # Log response

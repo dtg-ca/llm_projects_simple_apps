@@ -11,7 +11,7 @@ async function fetchNews() {
     }
 
     let data = await response.json();
-    summaryDiv.innerHTML = `<p>${data.summary}</p>`;
+    summaryDiv.innerHTML = `<p>${data.news_summary}</p>`;
 
     let articlesHTML = "";
     data.articles.forEach(article => {
