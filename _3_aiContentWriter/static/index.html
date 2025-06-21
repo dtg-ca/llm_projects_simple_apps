@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Blog & Content Writer</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/style.css">    
 </head>
 <body>
 
     <h1>AI Blog & Content Writer</h1>
-    <input type="text" id="topic" placeholder="Enter blog title(eg: Role of AI in marketing)...">
+    <input type="text" id="topic" placeholder="Enter a topic (e.g., AI in marketing)">
     <select id="style">
-        <option value="default">Select Writing Style</option>
-        <option value="formal">Formal</option>
-        <option value="informal">Informal</option>
+        <option value="professional">Professional</option>
+        <option value="casual">Casual</option>
         <option value="technical">Technical</option>
-        <option value="story-telling">Story-telling</option>        
+        <option value="storytelling">Storytelling</option>
     </select>
     <button onclick="generateContent()">Generate Content</button>
-
-    <h2>Generated Content:</h2>
-    <textarea id="output" readonly>Your summary will appear here</textarea>
     
+    <h2>Generated Content:</h2>
+    <textarea id="output" readonly></textarea> 
+    
+     <script src="static/script.js"></script>
 
-    <script src="static/script.js"></script>
-   
 </body>
 </html>

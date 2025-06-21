@@ -41,12 +41,7 @@ def generate_content(topic: str = Form(...), style: str = Form(...)):
 
         # Extract the content from the response
         content = result.get("choices", [{}])[0].get("text", "")
-
-        # ensure valid json response
-        try:
-            json.loads(content) # Check if content is valid JSON    
-        except json.JSONDecodeError:
-            raise HTTPException(status_code=500, detail="Received invalid JSON from LM Studio API")
+        
         return {"content": content}
     except requests.exceptions.RequestException as e:
         raise HTTPException(status_code=500, detail=f"Error communicating with LM Studio API: {str(e)}")

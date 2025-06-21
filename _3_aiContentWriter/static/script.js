@@ -1,25 +1,22 @@
 async function generateContent() {
     let topic = document.getElementById("topic").value;
     let style = document.getElementById("style").value;
-    let outputDiv = document.getElementById("output");
-    outputDiv.innerHTML = "Generating content...";
+    let outputArea = document.getElementById("output");
 
     let formData = new FormData();
-    formData.append("text",  topic);
+    formData.append("topic", topic);
     formData.append("style", style);
 
     let response = await fetch("/generate", {
         method: "POST",
-        body: formData,
+        body: formData
     });
 
-    
-    let data = await response.json();
-        if (data.error) {
-        outputDiv.innerHTML = `<p style='color: red;'>Error: ${data.error}</p>`;
-    } else {
-        outputDiv.innerHTML = `<p>${data.content}</p>`;
-    }
+    if (!response.ok) {
+        outputArea.value = "Error: Failed to generate content.";
+        return;
     }
 
-    
+    let data = await response.json();
+    outputArea.value = data.content;
+}
